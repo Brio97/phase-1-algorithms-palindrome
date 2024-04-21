@@ -1,5 +1,16 @@
 function isPalindrome(word) {
   // Write your algorithm here
+  word = word.toLowerCase();
+  let charArr = word.split('');
+  let validChar = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+  let lettersArr = [];
+  charArr.forEach(char => {
+    if (validChar.indexOf(char) > -1) lettersArr.push(char);   
+  });
+
+  if (lettersArr.join('') === lettersArr.reverse().join('')) return true;
+  else return false; 
 }
 
 /* 
